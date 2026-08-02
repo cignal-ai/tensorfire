@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tensorfire-mcp"
+version = "0.1.0"
+description = "An MCP server bundling open-source AI model security & safety testing tooling."
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+license = { text = "MIT" }
+authors = [{ name = "Cignal" }]
+keywords = ["mcp", "llm", "security", "red-team", "guardrails", "ai-safety"]
+
+# Runtime dependencies: the MCP server, the built-in URL/injection scanners,
+# and garak (the LLM vulnerability scanner). garak is a normal dependency and
+# runs in the same interpreter as the server.
+dependencies = [
+    "mcp>=1.27.0,<2",
+    "httpx>=0.27",
+    "anyio>=4.4",
+    "garak>=0.10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23", "ruff>=0.5"]
+
+[project.scripts]
+tensorfire = "tensorfire.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["src"]

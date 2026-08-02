@@ -1,0 +1,18 @@
+services:
+  tensorfire:
+    build:
+      context: .
+    image: tensorfire:latest
+    ports:
+      - "8000:8000"
+    environment:
+      TENSORFIRE_TRANSPORT: streamable-http
+      TENSORFIRE_LOG_LEVEL: INFO
+      # API keys for targets under test are read from the environment (never
+      # passed as tool arguments). Supply the ones your targets need:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-}
+    volumes:
+      # Mount model corpora / files you want tools to reach.
+      - ./workspace:/workspace:ro
+    restart: unless-stopped
