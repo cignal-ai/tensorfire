@@ -1,4 +1,7 @@
-# Tensorfire
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/lockup-on-dark-padded.png">
+  <img alt="Tensorfire" src="images/lockup-ink-red-1024.png" width="480">
+</picture>
 
 An **MCP server**, shipped as a container image, for **security-testing AI
 models**. It exposes two things behind one consistent tool interface:
