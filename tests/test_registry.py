@@ -7,7 +7,7 @@ from tensorfire.tools._base import PackInfo
 def test_all_expected_packs_discovered():
     modules = discover_pack_modules()
     names = {m.rsplit(".", 1)[-1] for m in modules}
-    assert {"prompt_injection", "mcp_url_scan", "garak_scan"} <= names
+    assert {"prompt_injection", "mcp_url_scan", "garak_scan", "ai_compliance"} <= names
     assert "_base" not in names  # private modules excluded
 
 

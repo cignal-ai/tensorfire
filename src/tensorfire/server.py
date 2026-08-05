@@ -13,15 +13,20 @@ from .registry import register_all
 logger = logging.getLogger("tensorfire")
 
 INSTRUCTIONS = """\
-Tensorfire is an AI model security testing toolbench exposed over MCP.
+Tensorfire is an AI model security and compliance testing toolbench exposed
+over MCP.
 
-It provides garak (LLM vulnerability scanning) plus built-in prompt-injection
-and MCP-endpoint/URL scanning.
+It provides garak (LLM vulnerability scanning), built-in prompt-injection and
+MCP-endpoint/URL scanning, and an AI compliance knowledge base (NIST AI RMF
+1.0 / ISO 42001) for assessing whether a pipeline/architecture is compliant.
 
 Start with the `tensorfire_catalog` tool to see which packs are installed and what
 tools they expose. `garak_scan` takes a `model` and optional `base_url` naming
 an OpenAI-compatible endpoint; the API key is read from an environment variable
-inside the container (named by `api_key_env`, never passed as an argument)."""
+inside the container (named by `api_key_env`, never passed as an argument).
+For compliance checks: call `get_compliance_controls` to pull the checklist,
+inspect the target pipeline against it yourself, then call `assess_compliance`
+with your findings to get a scored gap-analysis report."""
 
 
 def build_server() -> FastMCP:
