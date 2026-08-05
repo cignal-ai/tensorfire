@@ -96,3 +96,10 @@ is represented faithfully at the Function/Category level (public domain); ISO
 substitute for the official text in an audit.
 
 Full docs, source, and issues: [github.com/cignal-ai/tensorfire](https://github.com/cignal-ai/tensorfire).
+
+## Trademark notice
+
+Cignal tensorfire™ is an open-source, community-driven project supported by
+Cignal LLC. TensorFlow® is a registered trademark of Google LLC. Cignal
+tensorfire and Cignal are not affiliated with, endorsed by, or sponsored by
+Google LLC.

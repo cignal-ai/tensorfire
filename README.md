@@ -187,3 +187,10 @@ substitute for the official controlled text in an actual certification audit.
 pip install -e ".[dev]"
 pytest
 ```
+
+## Trademark notice
+
+Cignal tensorfire™ is an open-source, community-driven project supported by
+Cignal LLC. TensorFlow® is a registered trademark of Google LLC. Cignal
+tensorfire and Cignal are not affiliated with, endorsed by, or sponsored by
+Google LLC.
